@@ -1,6 +1,10 @@
 import sqlite3
+import os
+from dotenv import load_dotenv
 
-database = "userDB.db"
+load_dotenv()
+
+database = os.getenv("DB_PATH")
 connection = sqlite3.connect(database)
 cursor = connection.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, bankAmt INTEGER, dailyTimer TEXT)")
