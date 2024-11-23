@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction</title> 
+  <!-- end extra head -->
+  <style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 6 Sharp Duotone";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    animation-delay: -1ms;
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+  4% {
+    transform: rotate(15deg);
+  }
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+  16% {
+    transform: rotate(-22deg);
+  }
+  20% {
+    transform: rotate(22deg);
+  }
+  32% {
+    transform: rotate(-12deg);
+  }
+  36% {
+    transform: rotate(12deg);
+  }
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link href="Introduction_files/icon.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="Introduction_files/pygments.css">
+  <link rel="stylesheet" type="text/css" href="Introduction_files/basic.css">
+  <link rel="stylesheet" type="text/css" href="Introduction_files/tabs.css">
+  
+  <link rel="stylesheet" href="Introduction_files/style.css" type="text/css">
+  <link rel="stylesheet" href="Introduction_files/codeblocks.css" type="text/css">
+  <link rel="stylesheet" href="Introduction_files/icons.css" type="text/css">
+  <script id="documentation_options" data-url_root="./" src="Introduction_files/documentation_options.js"></script>
+  <script type="text/javascript">
+    var DPY_TRANSLATIONS = {
+      copy_code: "Copy Code",
+      copy_code_error: "Could not copy codeblock:",
+    }
+  </script>
+  <script data-url_root="./" id="documentation_options" src="Introduction_files/documentation_options.js"></script>
+  <script src="Introduction_files/jquery.js"></script>
+  <script src="Introduction_files/underscore.js"></script>
+  <script src="Introduction_files/doctools.js"></script>
+  <script src="Introduction_files/tabs.js"></script>
+  
+  <script src="Introduction_files/custom.js"></script>
+  <script src="Introduction_files/settings.js"></script>
+  <script src="Introduction_files/copy.js"></script>
+  <script src="Introduction_files/sidebar.js"></script>
+  <link rel="shortcut icon" href="https://discordpy.readthedocs.io/en/stable/_static/discord_py_logo.ico">
+  <link rel="index" title="Index" href="https://discordpy.readthedocs.io/en/stable/genindex.html">
+  <link rel="search" title="Search" href="https://discordpy.readthedocs.io/en/stable/search.html">
+
+<!-- RTD Extra Head -->
+
+
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "intro", "programming_language": "py", "project": "discordpy", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {"discordpy-ja": "https://discordpy.readthedocs.io/ja/latest/"}, "theme": "basic", "user_analytics_code": "", "version": "stable"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+
+
+<!-- end RTD <extrahead> -->
+<script async="" type="text/javascript" src="Introduction_files/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="discordpy"><meta name="readthedocs-version-slug" content="stable"><meta name="readthedocs-resolver-filename" content="/intro.html"><meta name="readthedocs-http-status" content="200"><script id="ethicaladsjs" type="text/javascript" async="true" src="Introduction_files/ethicalads.min.js"></script></head>
+<body>
+  <div class="main-grid">
+    <header class="grid-item">
+      <nav>
+        <a href="https://discordpy.readthedocs.io/en/stable/index.html" class="main-heading">discord.py</a>
+        <a href="https://github.com/Rapptz/discord.py" title="GitHub"><span class="material-icons custom-icons">github</span></a>
+        <a href="https://discord.gg/r3sSKJJ" title="Discord"><span class="material-icons custom-icons">discord</span></a>
+        <a href="https://discordpy.readthedocs.io/en/stable/faq.html" title="FAQ"><span class="material-icons">help_center</span></a>
+        <a onclick="mobileSearch.open();" title="Search" id="open-search" class="mobile-only"><span class="material-icons">search</span></a>
+        <a onclick="mobileSearch.close();" title="Close" id="close-search" class="mobile-only" hidden=""><span class="material-icons">close</span></a>
+      </nav>
+      <nav class="mobile-only">
+        <form role="search" class="search" action="search.html" method="get">
+          <div class="search-wrapper">
+            <input type="search" name="q" placeholder="Search documentation">
+            <button type="submit">
+              <span class="material-icons">search</span>
+            </button>
+          </div>
+        </form>
+      </nav>
+    </header>
+    <div class="sub-header grid-item">
+      <label for="documentation_select">View Documentation For</label>
+      <select id="documentation_select" onchange="window.location = this.value;">
+        <option value="#" selected="selected">discord</option>
+        <option value="ext/commands/index.html">discord.ext.commands</option>
+        <option value="ext/tasks/index.html">discord.ext.tasks</option>
+      </select>
+      <form id="search-form" role="search" class="search" action="search.html" method="get">
+        <div class="search-wrapper">
+          <input type="search" name="q" placeholder="Search documentation">
+          <button type="submit" onmousedown="searchBarClick(event, document.getElementById('search-form'));">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+      </form>
+      <a accesskey="S" class="settings" onclick="settingsModal.open();"><span class="material-icons">settings</span></a>
+    </div>
+    <aside class="grid-item">
+      <span id="hamburger-toggle">
+        <span class="material-icons">menu</span>
+      </span>
+      <span id="settings-toggle" class="settings" onclick="settingsModal.open();">
+        <span class="material-icons">settings</span>
+      </span>
+      <div id="sidebar" style="height: calc(-1em - 14px + 100vh);">
+        <form id="sidebar-form" role="search" class="search" action="search.html" method="get">
+        <div class="search-wrapper search-sidebar">
+          <input type="search" name="q" placeholder="Search documentation">
+          <button type="submit" onmousedown="searchBarClick(event, document.getElementById('sidebar-form'));">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+      </form>
+  <div>
+    <h3><a href="https://discordpy.readthedocs.io/en/stable/index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li class=""><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="no-list-style"><span class="material-icons collapsible-arrow expanded">expand_more</span><a class="reference internal ref-internal-padding" href="#installing">Installing</a><ul>
+<li class=""><a class="reference internal" href="#virtual-environments">Virtual Environments</a></li>
+</ul>
+</li>
+<li class=""><a class="reference internal" href="#basic-concepts">Basic Concepts</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+      </div>
+    </aside>
+    <main class="grid-item" role="main">
+      
+  <section id="introduction">
+<span id="intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This is the documentation for discord.py, a library for Python to aid
+in creating applications that utilise the Discord API.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>discord.py works with Python 3.8 or higher. Support for earlier versions of Python
+is not provided. Python 2.7 or lower is not supported. Python 3.7 or lower is not supported.</p>
+</section>
+<section id="installing">
+<span id="id1"></span><h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
+<p>You can get the library directly from PyPI:</p>
+<div class="highlight-default notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">discord</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>If you are using Windows, then the following should be used instead:</p>
+<div class="highlight-default notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="mi">3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">discord</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>To get voice support, you should use <code class="docutils literal notranslate"><span class="pre">discord.py[voice]</span></code> instead of <code class="docutils literal notranslate"><span class="pre">discord.py</span></code>, e.g.</p>
+<div class="highlight-default notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">discord</span><span class="o">.</span><span class="n">py</span><span class="p">[</span><span class="n">voice</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>On Linux environments, installing voice requires getting the following dependencies:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/libffi/libffi">libffi</a></p></li>
+<li><p><a class="reference external" href="https://github.com/saltstack/libnacl">libnacl</a></p></li>
+<li><p><a class="reference external" href="https://packages.debian.org/python3-dev">python3-dev</a></p></li>
+</ul>
+<p>For a Debian-based system, the following command will get these dependencies:</p>
+<div class="highlight-shell notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libffi-dev<span class="w"> </span>libnacl-dev<span class="w"> </span>python3-dev
+</pre></div>
+</div>
+<p>Remember to check your permissions!</p>
+<section id="virtual-environments">
+<h3>Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes you want to keep libraries from polluting system installs or use a different version of
+libraries than the ones installed on the system. You might also not have permissions to install libraries system-wide.
+For this purpose, the standard library as of Python 3.3 comes with a concept called “Virtual Environment”s to
+help maintain these separate versions.</p>
+<p>A more in-depth tutorial is found on <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html" title="(in Python v3.12)"><span>Virtual Environments and Packages</span></a>.</p>
+<p>However, for the quick and dirty:</p>
+<ol class="arabic">
+<li><p>Go to your project’s working directory:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>your-bot-source
+$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>bot-env
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Activate the virtual environment:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>bot-env/bin/activate
+</pre></div>
+</div>
+<p>On Windows you activate it with:</p>
+<div class="highlight-shell notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span>$<span class="w"> </span>bot-env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Use pip like usual:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>discord.py
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Congratulations. You now have a virtual environment all set up.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Scripts executed with <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-3</span></code> will ignore any currently active virtual
+environment, as the <code class="docutils literal notranslate"><span class="pre">-3</span></code> specifies a global scope.</p>
+</div>
+</section>
+</section>
+<section id="basic-concepts">
+<h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
+<p>discord.py revolves around the concept of <a class="reference internal" href="https://discordpy.readthedocs.io/en/stable/api.html#discord-api-events"><span class="std std-ref">events</span></a>.
+An event is something you listen to and then respond to. For example, when a message
+happens, you will receive an event about it that you can respond to.</p>
+<p>A quick example to showcase how events work:</p>
+<div class="highlight-python3 notranslate relative-copy"><div class="highlight"><span class="copy" aria-label="Copy Code" title="Copy Code"><span class="material-icons">content_copy</span></span><pre><span></span><span class="c1"># This example requires the 'message_content' intent.</span>
+
+<span class="kn">import</span> <span class="nn">discord</span>
+
+<span class="k">class</span> <span class="nc">MyClient</span><span class="p">(</span><span class="n">discord</span><span class="o">.</span><span class="n">Client</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">on_ready</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Logged on as </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="si">}</span><span class="s1">!'</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Message from </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">intents</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Intents</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
+<span class="n">intents</span><span class="o">.</span><span class="n">message_content</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">MyClient</span><span class="p">(</span><span class="n">intents</span><span class="o">=</span><span class="n">intents</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'my token goes here'</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </main>
+    <footer class="grid-item">
+        © Copyright 2015-present, Rapptz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </footer>
+  </div>
+  <script>
+    if (typeof READTHEDOCS_DATA !== "undefined") {
+        if (!READTHEDOCS_DATA.features) {
+          READTHEDOCS_DATA.features = {};
+        }
+        READTHEDOCS_DATA.features.docsearch_disabled = true;
+      }
+  </script>
+
+  <div id="settings" class="modal" onclick="if (event.target == this){ settingsModal.close(); }" hidden="">
+    <div class="modal-content">
+      <span class="close" onclick="settingsModal.close();" title="Close">
+        <span class="material-icons">close</span>
+      </span>
+      <h1>Settings</h1>
+
+      <h2>Font</h2>
+      <div class="setting">
+        <h3>Use a serif font:
+          <label class="toggle" title="Use a serif font? Your system font will be used, falling back to serif.">
+            <input type="checkbox" name="useSerifFont" onclick="updateSetting(this);">
+            <span class="toggle-slider"></span>
+          </label>
+        </h3>
+      </div>
+
+      <h2>Theme</h2>
+      <div class="setting">
+        <h3>
+          <label class="toggle" title="Set your theme based on your system preferences">
+            <input type="radio" name="setTheme" onclick="updateSetting(this);" value="automatic" checked="checked">
+          </label>
+          Automatic
+        </h3>
+        <h3>
+          <label class="toggle" title="Set your theme to light theme">
+            <input type="radio" name="setTheme" onclick="updateSetting(this);" value="light">
+          </label>
+          Light
+        </h3>
+        <h3>
+          <label class="toggle" title="Set your theme to dark theme">
+            <input type="radio" name="setTheme" onclick="updateSetting(this);" value="dark">
+          </label>
+          Dark
+        </h3>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="to-top" onclick="scrollToTop()" class="is-rtd">
+    <span><span class="material-icons">arrow_upward</span>to top</span>
+  </div>
+
+
+<readthedocs-flyout></readthedocs-flyout><div id="readthedocs-ea" class="raised" data-ea-type="image" data-ea-style="stickybox" data-ea-placement-bottom="90px" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-keywords="discord|discord-api|python|python-3|readthedocs-project-44239|readthedocs-project-discordpy" data-ea-campaign-types="community|house|paid"></div><readthedocs-notification class="raised toast"></readthedocs-notification><readthedocs-search class="raised floating"></readthedocs-search><readthedocs-hotkeys></readthedocs-hotkeys></body></html>
