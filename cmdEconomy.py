@@ -2,6 +2,7 @@ import sqlite3
 import os
 import discord
 import random
+import cmdJob
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
@@ -26,7 +27,7 @@ async def bankCommand(message):
             dollarN = dollarCount[1]
         bankEmbed = discord.Embed(
             title="Bank",
-            description=f"This is your bank! You currently have {amount[0]} {dollarN}",
+            description=f"You currently have {amount[0]} {dollarN}",
             color=discord.Color.blue()
         )
         bankEmbed.set_author(name=message.author.name, icon_url=message.author.avatar.url)
@@ -34,12 +35,18 @@ async def bankCommand(message):
         await message.channel.send(embed=bankEmbed)
     else:
         await message.channel.send(f"You do not have a bank, creating now...")
-        cursor.execute(f"INSERT INTO users (id, name, bankAmt, dailyTimer) VALUES (?, ?, ?, ?)",(userID, message.author.name, 0, 'NONE'))
+        cursor.execute(f"INSERT INTO users (id, name, bankAmt, dailyTimer, job, jobTimer) VALUES (?, ?, ?, ?, ?, ?)",(userID, message.author.name, 0, 'NONE', 'NONE', 'NONE'))
         print(f"Bank created for {message.author.id}")
         connection.commit()
         await message.channel.send(f"Bank created! Have fun!")
 
-async def giveCommand(message):
+async def cashCommand(message):
+    await message.channel.send()
+
+async def payCommand(message):
+    await message.channel.send()
+
+async def stealCommand(message):
     await message.channel.send()
 
 async def dailyCommand(message):

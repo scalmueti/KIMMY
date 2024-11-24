@@ -1,7 +1,7 @@
 from cmdEconomy import *
+from cmdJob import *
 
 prefix = "$"
-commands = ["hello", "bye"]
 
 async def helloCommand(message):
     await message.channel.send('Hello!')
@@ -15,8 +15,13 @@ commandsDic = {
     "hello":helloCommand,
     "bye":byeCommand,
     "bank":bankCommand,
-    "give":giveCommand,
-    "daily":dailyCommand
+    "pay":payCommand,
+    "daily":dailyCommand,
+    "work":workCommand,
+    "cash":cashCommand,
+    "job":jobCommand,
+    "steal":stealCommand,
+    "apply":applyCommand
 }
 
 async def commandListener(message):
