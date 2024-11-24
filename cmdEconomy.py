@@ -5,7 +5,8 @@ import random
 import cmdJob
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
-
+from sqlEconomy import sqlEcoTimer
+from embedBuilder import embedBuilder
 load_dotenv()
 
 database = os.getenv("DB_PATH")
@@ -25,11 +26,13 @@ async def bankCommand(message):
             dollarN = dollarCount[0]
         else:
             dollarN = dollarCount[1]
-        bankEmbed = discord.Embed(
-            title="Bank",
-            description=f"You currently have {amount[0]} {dollarN}",
-            color=discord.Color.blue()
-        )
+        #bankEmbed = discord.Embed(
+        #    title="Bank",
+        #    description=f"You currently have {amount[0]} {dollarN}",
+        #    color=discord.Color.blue()
+        #)
+        description = f"You currently have {amount[0]} {dollarN}"
+        bankEmbed = await embedBuilder("Bank", description, discord.Color.blue(), None)
         bankEmbed.set_author(name=message.author.name, icon_url=message.author.avatar.url)
         bankEmbed.set_footer(text="KIMMY")
         await message.channel.send(embed=bankEmbed)
@@ -51,35 +54,4 @@ async def stealCommand(message):
 
 async def dailyCommand(message):
     userID = message.author.id
-    cursor.execute(f"SELECT dailyTimer FROM users WHERE id = ?", (userID,))
-    userDailyT = cursor.fetchone()
-    now = datetime.now().isoformat()
-    if userDailyT[0] == "NONE":
-        cursor.execute("UPDATE users SET dailyTimer = ? WHERE id = ?", (now, userID))
-        dailyAmt = random.randint(50, 100)
-        cursor.execute("SELECT bankAmt FROM users WHERE id = ?", (userID,))
-        userBank = cursor.fetchone()
-        addDaily = userBank[0] + dailyAmt
-        cursor.execute("UPDATE users SET bankAmt = ? WHERE id = ?", (addDaily, userID))
-        connection.commit()
-        await message.channel.send(f"Daily claimed! You claimed ${dailyAmt}")
-        return
-    else:
-        userLastClaim = datetime.fromisoformat(userDailyT[0])
-        thresholdTime = userLastClaim + timedelta(hours=24)
-        if (datetime.now() >= thresholdTime):
-            cursor.execute("UPDATE users SET dailyTimer = ? WHERE id = ?", (now, userID))
-            dailyAmt = random.randint(50, 100)
-            cursor.execute("SELECT bankAmt FROM users WHERE id = ?", (userID,))
-            userBank = cursor.fetchone()
-            addDaily = userBank[0] + dailyAmt
-            cursor.execute("UPDATE users SET bankAmt = ? WHERE id = ?", (addDaily, userID))
-            connection.commit()
-            await message.channel.send(f"Daily claimed! You claimed ${dailyAmt}")
-        else:
-            timeDiff = thresholdTime - datetime.now()
-            hours = timeDiff.seconds // 3600
-            minutes = (timeDiff.seconds % 3600) // 60
-            seconds = timeDiff.seconds % 60
-            timeFormat = f"{hours} hours, {minutes} minutes, {seconds} seconds"
-            await message.channel.send(f"Unable to claim daily. Remaining time: {timeFormat}")
+    await sqlEcoTimer("daily", userID, message)
