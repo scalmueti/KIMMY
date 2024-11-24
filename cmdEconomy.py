@@ -1,6 +1,9 @@
 import sqlite3
 import os
+import discord
+import random
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
 
 load_dotenv()
 
@@ -16,7 +19,19 @@ async def bankCommand(message):
     if userCheck:
         cursor.execute(f"SELECT bankAmt FROM users WHERE id = ?", (userID,))
         amount = (cursor.fetchone())
-        await message.channel.send(f"This is {message.author}'s bank: {amount[0]}")
+        dollarCount = ["dollar","dollars"]
+        if int(amount[0]) == 1:
+            dollarN = dollarCount[0]
+        else:
+            dollarN = dollarCount[1]
+        bankEmbed = discord.Embed(
+            title="Bank",
+            description=f"This is your bank! You currently have {amount[0]} {dollarN}",
+            color=discord.Color.blue()
+        )
+        bankEmbed.set_author(name=message.author.name, icon_url=message.author.avatar.url)
+        bankEmbed.set_footer(text="KIMMY")
+        await message.channel.send(embed=bankEmbed)
     else:
         await message.channel.send(f"You do not have a bank, creating now...")
         cursor.execute(f"INSERT INTO users (id, name, bankAmt, dailyTimer) VALUES (?, ?, ?, ?)",(userID, message.author.name, 0, 'NONE'))
@@ -28,4 +43,36 @@ async def giveCommand(message):
     await message.channel.send()
 
 async def dailyCommand(message):
-    await message.channel.send()
+    userID = message.author.id
+    cursor.execute(f"SELECT dailyTimer FROM users WHERE id = ?", (userID,))
+    userDailyT = cursor.fetchone()
+    now = datetime.now().isoformat()
+    if userDailyT[0] == "NONE":
+        cursor.execute("UPDATE users SET dailyTimer = ? WHERE id = ?", (now, userID))
+        dailyAmt = random.randint(50, 100)
+        cursor.execute("SELECT bankAmt FROM users WHERE id = ?", (userID,))
+        userBank = cursor.fetchone()
+        addDaily = userBank[0] + dailyAmt
+        cursor.execute("UPDATE users SET bankAmt = ? WHERE id = ?", (addDaily, userID))
+        connection.commit()
+        await message.channel.send(f"Daily claimed! You claimed ${dailyAmt}")
+        return
+    else:
+        userLastClaim = datetime.fromisoformat(userDailyT[0])
+        thresholdTime = userLastClaim + timedelta(hours=24)
+        if (datetime.now() >= thresholdTime):
+            cursor.execute("UPDATE users SET dailyTimer = ? WHERE id = ?", (now, userID))
+            dailyAmt = random.randint(50, 100)
+            cursor.execute("SELECT bankAmt FROM users WHERE id = ?", (userID,))
+            userBank = cursor.fetchone()
+            addDaily = userBank[0] + dailyAmt
+            cursor.execute("UPDATE users SET bankAmt = ? WHERE id = ?", (addDaily, userID))
+            connection.commit()
+            await message.channel.send(f"Daily claimed! You claimed ${dailyAmt}")
+        else:
+            timeDiff = thresholdTime - datetime.now()
+            hours = timeDiff.seconds // 3600
+            minutes = (timeDiff.seconds % 3600) // 60
+            seconds = timeDiff.seconds % 60
+            timeFormat = f"{hours} hours, {minutes} minutes, {seconds} seconds"
+            await message.channel.send(f"Unable to claim daily. Remaining time: {timeFormat}")
