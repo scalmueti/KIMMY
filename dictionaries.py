@@ -15,3 +15,11 @@ jobsDic = {
         "Surgeon":[random.randint(25000,50000), "Surgeon"],
         "Lawyer":[random.randint(25000,50000), "Lawyer"]
 }
+
+bankImgDic = {
+    "0-1000":"https://raw.githubusercontent.com/scalmueti/KIMMY/refs/heads/master/assets/bankImages/0-1000_money.png",
+    "1000-5000":"https://raw.githubusercontent.com/scalmueti/KIMMY/refs/heads/master/assets/bankImages/1000-5000_money.png",
+    "5000-10000":"https://raw.githubusercontent.com/scalmueti/KIMMY/refs/heads/master/assets/bankImages/5000-10000_money.png",
+    "10000-100000":"https://raw.githubusercontent.com/scalmueti/KIMMY/refs/heads/master/assets/bankImages/10000-100000_money.png",
+    "100000+":"https://raw.githubusercontent.com/scalmueti/KIMMY/refs/heads/master/assets/bankImages/100000+_money.png"
+}

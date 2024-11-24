@@ -8,5 +8,6 @@ async def embedBuilder(Dtitle, Ddescription, Dcolor, Dimage):
         color = Dcolor,
     )
     if Dimage != None:
-        embed.set_image(Dimage)
+        print(Dimage)
+        embed.set_image(url=Dimage)
     return embed
