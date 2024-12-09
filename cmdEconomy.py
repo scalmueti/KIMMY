@@ -57,7 +57,7 @@ async def bankCommand(message):
             dollarN = dollarCount[0]
         else:
             dollarN = dollarCount[1]
-        bankBuilder(, money)
+        bankBuilder(message.author, money)
         description = f"You currently have {amount[0]} {dollarN}"
         if (money > 0) and (money <= 1000):
             bankImage = bankImgDic["0-1000"]
