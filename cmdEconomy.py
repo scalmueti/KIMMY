@@ -3,6 +3,7 @@ import os
 import discord
 import random
 import cmdJob
+from imageBuilder import *
 from PIL import Image, ImageDraw, ImageFont
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
@@ -18,7 +19,8 @@ connection = sqlite3.connect(database)
 cursor = connection.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, bankAmt INTEGER, dailyTimer TEXT)")
 
-def userImgInfo(name, amount):
+
+"""def userImgInfo(name, amount):
     width, height = 680, 100
     bgColor = (0,0,0)
     image = Image.new("RGB", (width, height), bgColor)
@@ -39,9 +41,9 @@ def userImgInfo(name, amount):
     draw.text((x2, y2), amount, fill=text_color, font=font)
     with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as temp_file:
         image.save(temp_file.name)
-        print(f"Temporary file createD: {temp_file.name}")
-        time.sleep(5)
-    
+        print(f"Temporary file created: {temp_file.name}")
+        time.sleep(5)"""
+   
 async def bankCommand(message):
     userID = message.author.id
     cursor.execute(f"SELECT * FROM users WHERE id = ?", (userID,))
@@ -55,7 +57,7 @@ async def bankCommand(message):
             dollarN = dollarCount[0]
         else:
             dollarN = dollarCount[1]
-        userImgInfo(message.author.name, money)
+        bankBuilder(, money)
         description = f"You currently have {amount[0]} {dollarN}"
         if (money > 0) and (money <= 1000):
             bankImage = bankImgDic["0-1000"]
