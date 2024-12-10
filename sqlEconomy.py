@@ -12,6 +12,7 @@ connection = sqlite3.connect(database)
 cursor = connection.cursor()
 
 async def sqlEcoTimer(type, userID, message):
+    now = datetime.now().isoformat()
     if type == "daily":
         cursor.execute("SELECT dailyTimer FROM users WHERE id = ?", (userID,))
         ecoTimer = cursor.fetchone()
@@ -28,7 +29,6 @@ async def sqlEcoTimer(type, userID, message):
     else:
           pass
     if ecoTimer[0] == "NONE":
-            now = datetime.now().isoformat()
             cursor.execute(f"UPDATE users SET {timerType} = ? WHERE id = ?", (now, userID))
             payAmt = userPay
             cursor.execute("SELECT bankAmt FROM users WHERE id = ?", (userID,))
