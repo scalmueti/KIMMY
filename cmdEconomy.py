@@ -56,8 +56,7 @@ async def bankCommand(message):
             dollarN = dollarCount[0]
         else:
             dollarN = dollarCount[1]
-        bankBuilder(message.author, money)
-        description = f"You currently have {amount[0]} {dollarN}"
+        #description = f"You currently have {amount[0]} {dollarN}"
         if (money > 0) and (money <= 1000):
             bankImage = bankImgDic["0-1000"]
         elif (money > 1000) and (money <= 5000):
@@ -68,10 +67,13 @@ async def bankCommand(message):
             bankImage = bankImgDic["10000-100000"]
         elif (money > 100000):
             bankImage = bankImgDic["100000+"]
-        bankEmbed = await embedBuilder("Bank", description, discord.Color.blue(), bankImage)
+        bankBuilder(message.author, money, bankImage)
+        bankEmbed = await embedBuilder(None, None, discord.Color.blue(), f"attachment://combinedImage.png")
         bankEmbed.set_author(name=message.author.name, icon_url=message.author.avatar.url)
-        bankEmbed.set_footer(text="KIMMY")
-        await message.channel.send(embed=bankEmbed)
+        directory = "assets/bankImages"
+        file_path = f"{directory}/combinedImage.png"
+        imgFile = discord.File(file_path, filename="combinedImage.png")
+        await message.channel.send(embed=bankEmbed, file=imgFile)
     else:
         await message.channel.send(f"You do not have a bank, creating now...")
         cursor.execute(f"INSERT INTO users (id, name, bankAmt, dailyTimer, job, jobTimer) VALUES (?, ?, ?, ?, ?, ?)",(userID, message.author.name, 0, 'NONE', 'NONE', 'NONE'))
