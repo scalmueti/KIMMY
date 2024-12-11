@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from databaseConnect import *
 from sqlEconomy import sqlEcoTimer
+from dictionaries import jobsDic
 
 load_dotenv()
 
@@ -28,7 +29,7 @@ async def jobCommand(message):
     cursor.execute("SELECT job FROM users WHERE id = ?", (userID,))
     userJob = cursor.fetchone()
     connection.commit()
-    await message.channel.send()
+    await message.channel.send(f"You work as a {jobsDic[userJob[0]][1]}")
 
 async def applyCommand(message):
     cursor, connection = await dbPick("user")

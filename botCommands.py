@@ -1,6 +1,7 @@
 from cmdEconomy import *
 from cmdJob import *
 from cmdHelp import *
+from prefixPicker import prefixCommand
 
 prefix = "$"
 
@@ -21,13 +22,18 @@ commandsDic = {
     "job":jobCommand,
     "steal":stealCommand,
     "apply":applyCommand,
-    "help":helpCommand
+    "help":helpCommand,
+    "prefix":prefixCommand
 }
 
 async def commandListener(message):
     userMsg = message.content
-    userMessage = userMsg.replace(f'{prefix}', "")
-    if userMessage in commandsDic:
-        await commandsDic[userMessage](message)
+    msgParts = userMsg[len(prefix):].split()
+    cmdName = msgParts[0]
+    args = msgParts[1:] if len (msgParts) > 1 else []
+    if args and cmdName in commandsDic:
+        await commandsDic[cmdName](message, *args)
+    elif cmdName in commandsDic:
+        await commandsDic[cmdName](message)
     else:
         await message.channel.send('Incorrect command.')

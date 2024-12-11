@@ -1,15 +1,7 @@
-import discord
+from discord import Embed
 # Some Freepix photos used
-async def embedBuilder(Dtitle, Ddescription, Dcolor, Dimage):
-    if Dtitle != None:
-        Dtitle = ""
-    if Ddescription != None:
-        Ddescription = ""
-    embed = discord.Embed(
-        title = Dtitle,
-        description = Ddescription,
-        color = Dcolor,
-    )
-    if Dimage != None:
-        embed.set_image(url=Dimage)
+async def embedBuilder(title, Ddesc, color, image):
+    embed = Embed(title=title, description=Ddesc, color=color)
+    if image:
+        embed.set_image(image=image)
     return embed

@@ -28,7 +28,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if message.content.startswith(f'{prefix[0]}') and prefix[0] != None:
+    if message.content.startswith(f'{prefix[0]}'):
         await botCommands.commandListener(message)
 
 client.run(token)

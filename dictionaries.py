@@ -1,7 +1,5 @@
 import random
 
-botPrefix = "$"
-
 jobsDic = {
         "FFWorker":[random.randint(500,1000), "Fast Food Worker"],
         "Barista":[random.randint(500,1000), "Barista"],
@@ -26,5 +24,5 @@ bankImgDic = {
 }
 
 commandsList = [
-    "hello","bye","bank","pay","daily","work","cash","job","steal","apply","help"
+    "hello","bye","bank","pay","daily","work","cash","job","steal","apply","help","prefix"
 ]

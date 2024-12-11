@@ -22,3 +22,9 @@ async def prefixCheck(message):
     else:
         cursor.execute("INSERT INTO guilds (guildid, name, prefix) VALUES (?, ?, ?)", (guildID, guildName, "$"))
         connection.commit()
+    
+async def prefixCommand(message, newPrefix):
+    guildID = message.guild.id
+    cursor.execute("UPDATE guilds SET prefix = ? WHERE guildid = ?", (newPrefix, guildID))
+    connection.commit()
+    await message.channel.send(f"Prefix has been changed to `{newPrefix}`")

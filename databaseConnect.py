@@ -12,5 +12,4 @@ async def dbPick(type):
     connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
     dbInfo = [cursor, connection]
-    #print(dbInfo)
     return dbInfo[0], dbInfo[1]
