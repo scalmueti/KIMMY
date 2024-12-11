@@ -2,7 +2,6 @@ import sqlite3
 import os
 import discord
 import random
-import cmdJob
 from imageBuilder import *
 from PIL import Image, ImageDraw, ImageFont
 from dotenv import load_dotenv

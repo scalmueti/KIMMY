@@ -1,5 +1,6 @@
 from cmdEconomy import *
 from cmdJob import *
+from cmdHelp import *
 
 prefix = "$"
 
@@ -21,7 +22,8 @@ commandsDic = {
     "cash":cashCommand,
     "job":jobCommand,
     "steal":stealCommand,
-    "apply":applyCommand
+    "apply":applyCommand,
+    "help":helpCommand
 }
 
 async def commandListener(message):
