@@ -4,14 +4,12 @@ import random
 from dictionaries import jobsDic
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
+from databaseConnect import *
 
 load_dotenv()
 
-database = os.getenv("DB_PATH")
-connection = sqlite3.connect(database)
-cursor = connection.cursor()
-
 async def sqlEcoTimer(type, userID, message):
+    cursor, connection = await dbPick("user")
     now = datetime.now().isoformat()
     if type == "daily":
         cursor.execute("SELECT dailyTimer FROM users WHERE id = ?", (userID,))

@@ -4,26 +4,26 @@ import discord
 import random
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
+from databaseConnect import *
 from sqlEconomy import sqlEcoTimer
 
 load_dotenv()
 
-database = os.getenv("DB_PATH")
-connection = sqlite3.connect(database)
-cursor = connection.cursor()
-
 prefix = "$"
 
 async def workCommand(message):
+    cursor, connection = await dbPick("user")
     userID = message.author.id
     cursor.execute("SELECT job FROM users WHERE id = ?", (userID,))
     userJob = cursor.fetchone()
     if userJob[0] == "NONE":
-            await message.channel.send(f"You do not have a job! Use {prefix}apply to apply to your first job!")
+        await message.channel.send(f"You do not have a job! Use {prefix}apply to apply to your first job!")
+        connection.commit()
     else:
         await sqlEcoTimer("work", userID, message)
 
 async def jobCommand(message):
+    cursor, connection = await dbPick("user")
     userID = message.author.id
     cursor.execute("SELECT job FROM users WHERE id = ?", (userID,))
     userJob = cursor.fetchone()
@@ -31,6 +31,7 @@ async def jobCommand(message):
     await message.channel.send()
 
 async def applyCommand(message):
+    cursor, connection = await dbPick("user")
     userID = message.author.id
     cursor.execute("SELECT job FROM users WHERE id = ?", (userID,))
     userJob = cursor.fetchone()

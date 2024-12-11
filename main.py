@@ -2,6 +2,7 @@ import discord
 import botCommands
 import os
 from dotenv import load_dotenv
+from prefixPicker import *
 
 load_dotenv()
 
@@ -11,8 +12,6 @@ if token:
     print(f"API key loaded successfully: {token}")
 else:
     print(f"API key not found, check .env file")
-
-prefix = '$'
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -25,10 +24,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    prefix = await prefixCheck(message)
     if message.author == client.user:
         return
     
-    if message.content.startswith(f'{prefix}'):
+    if message.content.startswith(f'{prefix[0]}') and prefix[0] != None:
         await botCommands.commandListener(message)
 
 client.run(token)
